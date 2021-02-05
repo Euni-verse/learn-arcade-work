@@ -1,8 +1,11 @@
 {\rtf1\ansi\ansicpg1252\cocoartf2513
-\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica-Bold;\f1\fswiss\fcharset0 Helvetica;}
-{\colortbl;\red255\green255\blue255;\red36\green255\blue255;}
-{\*\expandedcolortbl;;\cssrgb\c4983\c100000\c100000;}
-\margl1440\margr1440\vieww10800\viewh8400\viewkind0
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica-Bold;\f1\fswiss\fcharset0 Helvetica;\f2\fswiss\fcharset0 Helvetica-Oblique;
+}
+{\colortbl;\red255\green255\blue255;\red36\green255\blue255;\red0\green0\blue0;\red36\green255\blue255;
+}
+{\*\expandedcolortbl;;\cssrgb\c4983\c100000\c100000;\cssrgb\c0\c1\c1;\cssrgb\c4983\c100000\c100000;
+}
+\margl1440\margr1440\vieww13920\viewh13860\viewkind0
 \pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
 
 \f0\b\fs28 \cf0 CLASS NOTES\
@@ -18,6 +21,7 @@ Chapter 4: The Print Function\
 # syntax errors\
 # printing multiples lines in three different ways: multiple print functions, escape code \\n, and triple quotes\
 # style guide for Python is called PEP-8\
+# the terms function and command can be used interchangeably but functions are things where you expect a result and commands you expect something to happen and not necessarily to get something back\
 \
 # a double backslash is an escape code. Since you need double quotations to start and end a parameter you can use the backslash to indicate when you want to show the double quotation marks\
 \pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
@@ -38,7 +42,7 @@ world\'94\'94\'94)\
 \cf0 \
 \pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
 
-\f0\b\fs28 \cf0 Chapter 5: How to Draw with Your Computer\
+\f0\b\fs28 \cf0 Chapter 5: How to Draw with Your Computer (SCRATCH FOLDER, drawings_samples.py)\
 \
 
 \f1\b0\fs24 CHAPTER REVIEW
@@ -46,12 +50,231 @@ world\'94\'94\'94)\
 
 \f1\b0\fs24 # Use # to write single line comments in your code \
 # Use \'93\'94\'94 three quotation marks to write multi-line comments\
-# \
-
+# the terms library and modules can be used interchangeably in Python, libraries are a collection of code that are sets of instructions\
+# only use quotation marks around text in your functions, no need for numbers \
+\
+SETTING UP OUR CODE
 \f0\b\fs28 \
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\partightenfactor0
 
+\f1\b0\fs24 \cf0 # import arcade library \'97 computer languages come with a set of built-in commands, most programs will require more commands than what the computer language loads by default, these sets of commands are called libraries or modules\
+# the first ruction is to create a window that can be drawn in\
+\cf2 arcade.open_window(600, 600, \'93Drawing Example\'94)\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+\cf0 {{\NeXTGraphic Screen Shot 2021-01-21 at 11.53.41 AM.png \width12340 \height4020 \appleattachmentpadding0 \appleembedtype0 \appleaqc
+}¬}\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+\cf0 \
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\partightenfactor0
+\cf0 \
+# NOTE: The names of the functions, the order of parameters are outlined in the Application Program Interface of {\field{\*\fldinst{HYPERLINK "https://arcade.academy/quick_index.html"}}{\fldrslt API }}\
+\
+# Next set the background color for your open window\
+\cf2 arcade.set_background_color(arcade.color.BITTERSWEET)\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\partightenfactor0
+\cf3 # Next get ready to draw by starting the render\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\partightenfactor0
+\cf2 arcade.start_render()\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\partightenfactor0
+\cf3 # Then finish the drawing (at the end of the document)\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\partightenfactor0
+\cf2 arcade.finish_render()\cf3 \
+# And keep the window up until someone closes it\
+\cf2 arcade.run()\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\partightenfactor0
+\cf3 # Sandwhiched in between start render and finish render will be the code for the drawing\
+\
+\
+DRAWING COMMANDS\
+# Draw a rectangle for the floor of your open_window\
+# left of 0, right of 599, top of 300, bottom of 0\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\partightenfactor0
+\cf2 arcade.draw_lrtb_rectangle_filled(0, 599, 300, 0, arcade.color.WHATEVER)\cf3 \
+# Draw a tree trunk rectangle\
+# Center of 100, 320 ; width of 20, height of 60\
+\cf2 arcade.draw_rectangle_filled(100, 320, 20, 60, arcade.color.WHATEVER)\cf3 \
+# Draw a rectangle outline\
+\cf2 arcade.draw_rectangle_outline(100, 320, 20, 60, arcade.color.WHATEVER)\cf3 \
+# Draw a circle (x, y, radius)\
+\cf2 arcade.draw_circle_filled(100, 350, 30, arcade.color.WHATEVER)\cf3 \
+# Draw an ellipses (x, y, width, height)\
+\cf2 arcade.draw_ellipse_filled(300, 300, 350, 200, arcade.color.WHATEVER)\cf3 \
+# Draw an arc (x, y, width, height)\
+# angle is 0, 180\
+\cf2 arcade.draw_arc_filled(300, 340, 60, 100, arcade.color.WHATEVER, 0, 180)\cf3 \
+# Draw a triangle by its three points\
+\cf2 arcade.draw_triangle_filled(400, 400, 370, 320, 430, 320, arcade.color.WHATEVER)\cf3 \
+# Draw a Polygon using a list of points\
+\cf2 arcade.draw_polygon_filled(((500, 400),\
+					    (480, 360),\
+					    (470, 320),\
+					    (530, 320),\
+					    (520, 360)\
+					    ),\
+					   arcade.color.WHATEVER)\cf3 \
+\
+# Draw lines (x, y, ?, ?, color,  line width)\
+\cf2 arcade.draw_line(500, 550, 400, 550, arcade.color.WHATEVER, 3)\cf3 \
+# Draw text at (\'93text\'94 x, y, color, font size)\
+\cf2 arcade.draw_text(\'93Plant a Tree!\'94, 150, 230, arcade.color.WHATEVER, 24)\cf3 \
+\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+
+\f0\b\fs28 \cf0 Chapter 6: What is a Programming Language?\
+\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\partightenfactor0
+
+\f1\b0\fs24 \cf3 # CPU is the brain of the computer, it knows what to do by reading in a sequence of instructions. The instructions are written in numbers\
+# Everything stored on the computer is saved as a long sequence of numbers. Numbers can be instructions, can represent data, such as text, photos, and movies\
+# Graphic Processing Unit (GPU) is a processor in the computer whose primary purpose is to run graphics displays\
+	# In a high end computer graphic cards can have multiple processors \
+	# Each processor is called a core, a GPU is often made of many cores\
+	# The more processors we have, the more calculations we coach run at the same time\
+	# GPUs aren\'92t just used for graphics anymore, simple calculations, physics simulations, AI, data 	analytics can often make use of a computer\'92s GPU
+\f0\b\fs28 \cf0 \
+
+\f1\b0\fs24 \cf3 # Computer Languages can be divided into three broad categories\
+	# First Generation Language (1GL) or Machine Code, is a native language of any computer and 	is always made up of numbers.\
+	# Second Generation Languages (2GL), such as assembly language created by scientist 	Kathleen Booth, which writes a code then relies on a compiler that translates the computer 	commands into numbers (machine code) that the computer can read\
+	# Third Generation Languages (3GL), which usually fall into one of three categories\
+		# Compiled: the computer takes the original source code then uses a compiler to translate 		it to machine code, then the user runs it and doesn\'92t need the original source code to run it\
+		# Interpreted: the computer looks at the source code and translates it line-by-line. The 		compile step is not needed, but the user needs both the source code and the interpreter to 		run the program (ex. Python)\
+		# Runtime Environment: these languages take source code, and compile the source code 		to a machine language. But not the language of your actual machine, but to a virtual 		machine. \
+# WE ARE USING PYTHON 3 FOR THIS CLASS\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\partightenfactor0
+\cf2 \
+\cf0 \
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+
+\f0\b\fs28 \cf0 Chapter 7: Variables and Expressions (SCRATCH FOLDER, test_01.py)
 \f1\b0\fs24 \
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\partightenfactor0
 \cf0 \
+# A variable is a value the computer stores in memory that can change\
+# An Expression is simply a mathematical equation\
+# Expressions are made up of both variables and operators which are used to tell the computers how to combine the values\
+# = is an assignment operator and assigns a variable (on the left) to the value (on the right)\
+# Write descriptive variable names so people can understand them\
+# \
+\
+\
+# To create our own functions, we need to cover three things: how to use variables, how to write expressions, and how to create our own functions\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\partightenfactor0
+\cf3 # A variable is a value the computer stores in memory that can change (x)\
+	# variable names should be descriptive, all in lower case, and if a sequence of multiple words, 	separate the words by _\
+	# sometimes we want to create a variable that won\'92t change: variables constants, which are the 	only variables that use all upper-case\
+	# good variable names make code readable, so take the time to name your variables well\
+# An Expression is simply a mathematical equation\
+	# Expressions use operators (symbols like addition + and subtraction -)\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\partightenfactor0
+\cf0 	# Below are other examples of operators\
+\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+\cf0 {{\NeXTGraphic Screen Shot 2021-01-28 at 1.30.06 PM.png \width9020 \height5760 \appleattachmentpadding0 \appleembedtype0 \appleaqc
+}¬}\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+\cf0 \
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\partightenfactor0
+\cf0 \
+# Juxtaposition is the term used to describe two mathematical terms right next to each other, when this happens we assume the terms are multiplied \
+	# 2x means 2 x the variable x\
+	# 2(y + 1) means 2 x the result of y + 1\
+# You cannot write in juxtaposition in python \
+# To denote the same things from above you have to write the operator for multiplication in between\
+	# 2 * x\
+	# 2 * (y + 1)\
+# The equation symbol = doesn\'92t work the same as in algebra\
+# In Python the = takes the expression to the right and evaluates it, the resulting value is stored into a variable on the left of the =. \
+	# x = 3 + 4\
+	# 3 + 4 = x (does not work in Python because the only thing that can be on the left of the = is a 	variable \
+# To increasing a variable we need to use an assignment operator 
+\f0\b ?? ASK TIM 7.2.4 Increasing a Variable
+\f1\b0 \
+	# If x = 3 and we want to increase the value by one\
+	# print (x + 1) does not increase the value but if we use an assignment operator to this such as:\
+	x = x + 1 then when writing print (x) it will increase 3 to 4\
+\
+# Assignment Operators\
+\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+\cf0 {{\NeXTGraphic Screen Shot 2021-01-28 at 1.43.08 PM.png \width8940 \height4260 \appleattachmentpadding0 \appleembedtype0 \appleaqc
+}¬}\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+\cf0 \
+\
+# Expression s are not limited to assignment statements, we can use them as parameters in function calls\
+	# SCREEN_WIDTH = 800\
+	   SCREEN _HEIGHT = 600\
+	   aracade.draw_circle_filled(SCREEN_WIDTH / 2, SCREEN_HEIGHT / 2, 50, 	   arcade.color.FOREST_GREEN)\
+\
+
+\f0\b\fs28 Chapter 8: Creating Functions (SCRATCH FOLDER, test_02.py)\
+
+\f1\b0\fs24 \
+# Functions help us by: \
+	# Making out code easier to read\
+	# Abstracting our code using variables to tell a function 
+\f2\i where
+\f1\i0  to draw a tree and 
+\f2\i how
+\f1\i0  big\
+	# Re-using our code by calling a function over and over reducing the amount of lines of code it 	may take to draw something \
+	# Dividing a complex problem into simpler ones\
+	# Making code easier to maintain\
+# Creating Simple Functions\
+	# Start with the keyword 
+\f0\b def 
+\f1\b0 short for define\
+	# Name the function, function name must:\
+		# start with a lower case letter (on in special case, an underscore)\
+		# after the first letter, only use letters, numbers, and underscores\
+		# spaces are NOT allowed, use underscores instead\
+		# function names are usually all lower case\
+	# After the function is named, create a set of parenthesis. Inside the parenthesis will go 	parameters \
+	# Next, a colon\
+	# All the code that goes in the function will be on the following lines. The code must be indented 	4 spaces. The first line that isn not indented, signifies the function is done\
+	# Usually we start with a multi-line comment \'93\'94\'94 that explains what the function does\
+\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+\cf0 {{\NeXTGraphic Screen Shot 2021-01-30 at 11.01.11 AM.png \width13700 \height2460 \appleattachmentpadding0 \appleembedtype0 \appleaqc
+}¬}\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+\cf0 \
+# Calling a Function\
+	# After we define a function, we must call the function before the code in it runs\
+	# To call a function, type the function name and follow it by parenthesis, do not use def, that is 	only used when we define what the function does, not when we tell the computer to run it\
+	# print(\'93Hello!\'94)\
+# Defining multiple functions\
+	# You can do so, but all function definitions should go before the main code\
+# Almost ALL code should go in a function\
+	# It is good practice to put the main starting point of your program in a function called 
+\f0\b main
+\f1\b0  and 	call it\
+# Importing any library in Python will cause Python to automatically run the code unless the authors have explicitly told it not to by writing this line of code\
+\cf4 if__name__== \'93__main__\'94:\
+main()\cf0 \
+# Function Parameters\
+	# Functions are even more powerful if we can feed data into them to process\
+	# Set parameter values outside of function \
+# Returning Values: functions can not only take in values, functions can return values\
+\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\partightenfactor0
+\cf0 {{\NeXTGraphic Screen Shot 2021-01-30 at 11.34.15 AM.png \width13700 \height2680 \appleattachmentpadding0 \appleembedtype0 \appleaqc
+}¬}\
+\
+\
+# Return is NOT a function so no need to use parenthesis for example, this is not correct: return(result)\
+# The example above does not print anything because we have to CAPTURE the returned values and then PRINT it \
+# Capturing Returned Values\
+	# Capture the function\'92s result into a variable by putting a name before the = \
+	\cf4 my_result = sum_two_numbers(22, 15)\cf0 \
+	# Now print it\
+	\cf4 print(my_result)\cf0 \
+	# Now the result is not lost, it is store in the my_result variable which we can print or use in some other way\
+# There is a big difference between a function that prints a value and a function that returns a value\
+# THE FUNCTION ALWAYS RETURNS ONE THING, EVEN IF IT LOOKS LIKE IT RETURNS MORE THAN ONE (whether it is printed back to you or not)\
+# Documenting Functions\
+	# Docstring is a comment as the first statement of the function \
+	# These comments can be pulled out and used for documentation on websites etc. \
+# Variable Scope 8.6\
+	# Scope is where in the code a variable is \'93alive\'94 and can be accessed\
+	\
 \
 }
